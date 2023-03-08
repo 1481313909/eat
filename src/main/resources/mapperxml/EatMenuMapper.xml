@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eat.mapper.EatMenuMapper">
+  <resultMap id="BaseResultMap" type="com.eat.domain.EatMenu">
+    <!--@mbg.generated-->
+    <!--@Table eat_menu-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="synopsis" jdbcType="VARCHAR" property="synopsis" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="food_type" jdbcType="VARCHAR" property="foodType" />
+    <result column="taste" jdbcType="VARCHAR" property="taste" />
+    <result column="weight" jdbcType="VARCHAR" property="weight" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+    <result column="territory" jdbcType="VARCHAR" property="territory" />
+    <result column="image" jdbcType="LONGVARCHAR" property="image" />
+    <result column="source" jdbcType="VARCHAR" property="source" />
+    <result column="eat_time" jdbcType="VARCHAR" property="eatTime" />
+    <result column="ingredient" jdbcType="VARCHAR" property="ingredient" />
+    <result column="practice" jdbcType="LONGVARCHAR" property="practice" />
+    <result column="clitocybine" jdbcType="VARCHAR" property="clitocybine" />
+    <result column="mark_method" jdbcType="VARCHAR" property="markMethod" />
+    <result column="eat_people" jdbcType="VARCHAR" property="eatPeople" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, code, `name`, synopsis, `type`, food_type, taste, weight, price, territory, image, 
+    `source`, eat_time, ingredient, practice, clitocybine, mark_method, eat_people, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from eat_menu
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from eat_menu
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.eat.domain.EatMenu" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into eat_menu (code, `name`, synopsis, 
+      `type`, food_type, taste, 
+      weight, price, territory, 
+      image, `source`, eat_time, 
+      ingredient, practice, clitocybine, 
+      mark_method, eat_people, remark
+      )
+    values (#{code,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{synopsis,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{foodType,jdbcType=VARCHAR}, #{taste,jdbcType=VARCHAR}, 
+      #{weight,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, #{territory,jdbcType=VARCHAR}, 
+      #{image,jdbcType=LONGVARCHAR}, #{source,jdbcType=VARCHAR}, #{eatTime,jdbcType=VARCHAR}, 
+      #{ingredient,jdbcType=VARCHAR}, #{practice,jdbcType=LONGVARCHAR}, #{clitocybine,jdbcType=VARCHAR}, 
+      #{markMethod,jdbcType=VARCHAR}, #{eatPeople,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.eat.domain.EatMenu" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into eat_menu
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="code != null">
+        code,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="synopsis != null">
+        synopsis,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="foodType != null">
+        food_type,
+      </if>
+      <if test="taste != null">
+        taste,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="territory != null">
+        territory,
+      </if>
+      <if test="image != null">
+        image,
+      </if>
+      <if test="source != null">
+        `source`,
+      </if>
+      <if test="eatTime != null">
+        eat_time,
+      </if>
+      <if test="ingredient != null">
+        ingredient,
+      </if>
+      <if test="practice != null">
+        practice,
+      </if>
+      <if test="clitocybine != null">
+        clitocybine,
+      </if>
+      <if test="markMethod != null">
+        mark_method,
+      </if>
+      <if test="eatPeople != null">
+        eat_people,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="synopsis != null">
+        #{synopsis,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="foodType != null">
+        #{foodType,jdbcType=VARCHAR},
+      </if>
+      <if test="taste != null">
+        #{taste,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="territory != null">
+        #{territory,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        #{image,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="source != null">
+        #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="eatTime != null">
+        #{eatTime,jdbcType=VARCHAR},
+      </if>
+      <if test="ingredient != null">
+        #{ingredient,jdbcType=VARCHAR},
+      </if>
+      <if test="practice != null">
+        #{practice,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="clitocybine != null">
+        #{clitocybine,jdbcType=VARCHAR},
+      </if>
+      <if test="markMethod != null">
+        #{markMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="eatPeople != null">
+        #{eatPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.eat.domain.EatMenu">
+    <!--@mbg.generated-->
+    update eat_menu
+    <set>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="synopsis != null">
+        synopsis = #{synopsis,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="foodType != null">
+        food_type = #{foodType,jdbcType=VARCHAR},
+      </if>
+      <if test="taste != null">
+        taste = #{taste,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="territory != null">
+        territory = #{territory,jdbcType=VARCHAR},
+      </if>
+      <if test="image != null">
+        image = #{image,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="source != null">
+        `source` = #{source,jdbcType=VARCHAR},
+      </if>
+      <if test="eatTime != null">
+        eat_time = #{eatTime,jdbcType=VARCHAR},
+      </if>
+      <if test="ingredient != null">
+        ingredient = #{ingredient,jdbcType=VARCHAR},
+      </if>
+      <if test="practice != null">
+        practice = #{practice,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="clitocybine != null">
+        clitocybine = #{clitocybine,jdbcType=VARCHAR},
+      </if>
+      <if test="markMethod != null">
+        mark_method = #{markMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="eatPeople != null">
+        eat_people = #{eatPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.eat.domain.EatMenu">
+    <!--@mbg.generated-->
+    update eat_menu
+    set code = #{code,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      synopsis = #{synopsis,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      food_type = #{foodType,jdbcType=VARCHAR},
+      taste = #{taste,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      territory = #{territory,jdbcType=VARCHAR},
+      image = #{image,jdbcType=LONGVARCHAR},
+      `source` = #{source,jdbcType=VARCHAR},
+      eat_time = #{eatTime,jdbcType=VARCHAR},
+      ingredient = #{ingredient,jdbcType=VARCHAR},
+      practice = #{practice,jdbcType=LONGVARCHAR},
+      clitocybine = #{clitocybine,jdbcType=VARCHAR},
+      mark_method = #{markMethod,jdbcType=VARCHAR},
+      eat_people = #{eatPeople,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
